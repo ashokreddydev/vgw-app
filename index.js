@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 4000;
-const { Web3 } = require('web3');
 const bodyParser = require('body-parser');
 var asyncLoop = require('node-async-loop');
 const axios = require('axios');
