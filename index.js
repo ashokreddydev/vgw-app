@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.post('/api/history', (req, res) => {
 
-    const URL = `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${req.body.address}&startblock=0&endblock=99999999&sort=desc& &page=1&offset=50&apikey=48155D87J73SYAU8WQ4KKH4AQ4VS5MHY4Q`
+    const URL = `https://api-sepolia.etherscan.io/api?module=account&action=txlist&address=${req.body.address}&startblock=0&endblock=99999999&sort=desc&page=1&offset=50&apikey=48155D87J73SYAU8WQ4KKH4AQ4VS5MHY4Q`
 
 
     axios.get(URL)
