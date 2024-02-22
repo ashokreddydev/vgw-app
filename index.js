@@ -82,6 +82,53 @@ app.post('/api/decode', (req, res) => {
 }
 );
 
+app.post('/api/submissioncode', (req, res) => {
+    const list = [
+        "08251",
+        "08252",
+        "08253",
+        "08254",
+        "08255",
+        "08256",
+        "08257",
+        "08258",
+        "08259",
+        "08260",
+        "08261",
+        "08262",
+        "08263",
+        "08264",
+        "08265",
+        "08266",
+        "08267",
+        "08268",
+        "08269",
+        "08270",
+        "08271",
+        "08272",
+        "08273",
+        "08274",
+        "08275"
+    ]
+    const code = req.body.code;
+    const result = list.find(item => item === code);
+    if (result) {
+        res.json({
+            status: false,
+            data: result,
+            code: 200
+        })
+    } else {
+        res.json({
+            status: false,
+            message:"Invalid submission code",
+            code: 400
+        })
+    }
+}
+);
+
+
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
