@@ -114,7 +114,7 @@ app.post('/api/submissioncode', (req, res) => {
     const result = list.find(item => item === code);
     if (result) {
         res.json({
-            status: false,
+            status: true,
             data: result,
             code: 200
         })
